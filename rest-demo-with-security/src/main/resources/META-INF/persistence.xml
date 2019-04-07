@@ -11,7 +11,7 @@
     <class>com.algonquincollege.cst8277.models.PlatformRole</class>
     <class>com.algonquincollege.cst8277.models.PlatformUser</class> 
     <class>com.algonquincollege.cst8277.models.LineItem</class>
-    <class>com.algonquincollege.cst8277.models.Order</class>
+    <class>com.algonquincollege.cst8277.models.Cart</class>
     
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>

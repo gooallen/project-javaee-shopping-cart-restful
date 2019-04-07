@@ -19,7 +19,7 @@ public class LineItem extends ModelBase implements Serializable {
     private double subtotal;
     private int quantity;
     private String product;
-    private Order order;
+    private Cart cart;
     
     public double getSubtotal() {
         return subtotal;
@@ -41,12 +41,12 @@ public class LineItem extends ModelBase implements Serializable {
     }
     
     @ManyToOne
-    @JoinColumn(name="order_id")
-    public Order getOrder() {
-        return order;
+    @JoinColumn(name="cart_id")
+    public Cart getCart() {
+        return cart;
     }
     
-    public void setOrder(Order order) {
-        this.order = order;
+    public void setCart(Cart cart) {
+        this.cart = cart;
     }
 }

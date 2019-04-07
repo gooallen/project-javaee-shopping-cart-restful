@@ -8,7 +8,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import com.algonquincollege.cst8277.models.Order;
+import com.algonquincollege.cst8277.models.Cart;
 
 @Stateless
 public class ShoppingCartBean implements ShoppingCart {
@@ -16,7 +16,7 @@ public class ShoppingCartBean implements ShoppingCart {
     @PersistenceContext(unitName = PU_NAME)
     protected EntityManager em;
     
-    private Order order;
+    private Cart order;
     
 
     @Override
@@ -26,7 +26,7 @@ public class ShoppingCartBean implements ShoppingCart {
     }
 
     @Override
-    public Order getOrder() {
+    public Cart getOrder() {
         // TODO Auto-generated method stub
         return null;
     }

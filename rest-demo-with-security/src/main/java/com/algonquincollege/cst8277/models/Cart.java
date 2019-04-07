@@ -14,8 +14,8 @@ import javax.persistence.Table;
  */
 @Entity
 @EntityListeners({AuditListener.class})
-@Table(name = "Order")
-public class Order extends ModelBase implements Serializable {
+@Table(name = "Cart")
+public class Cart extends ModelBase implements Serializable {
     /** explicit set serialVersionUID */
     private static final long serialVersionUID = 1L;
     
@@ -30,7 +30,7 @@ public class Order extends ModelBase implements Serializable {
         this.total = total;
     }
     
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "cart")
     public Collection<LineItem> getLineItems() {
         return lineItems;
     }
@@ -42,7 +42,7 @@ public class Order extends ModelBase implements Serializable {
     public void calcPurchase(String product, int quantity, double price) {
         if(lineItems == null) lineItems = new ArrayList<>();
         LineItem item = new LineItem();
-        item.setOrder(this);
+        item.setCart(this);
         item.setProduct(product);
         item.setQuantity(quantity);
         item.setSubtotal(quantity * price);
