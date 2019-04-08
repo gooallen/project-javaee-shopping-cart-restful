@@ -24,6 +24,7 @@
     <project.source.level>1.8</project.source.level>
     <project.target.level>1.8</project.target.level>
     <maven.compiler.plugin.version>3.8.0</maven.compiler.plugin.version>
+    <maven.war.plugin.version>3.2.2</maven.war.plugin.version>
     <failOnMissingWebXml>false</failOnMissingWebXml>
     
     <!-- code properties -->

@@ -36,4 +36,9 @@ public class SimpleBean {
     public Employee getEmployeeById(int id) {
         return em.find(Employee.class, id);
     }
+
+	public List<Employee> getEmployeeList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
