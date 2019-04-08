@@ -28,7 +28,9 @@ public class CustomIdentityStore implements IdentityStore {
 
     @Inject
     protected Pbkdf2PasswordHash pbAndjPasswordHash;
-
+    
+    
+    // attempt to validate credential object
     @Override
     public CredentialValidationResult validate(Credential credential) {
 

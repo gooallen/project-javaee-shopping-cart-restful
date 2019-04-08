@@ -16,6 +16,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.algonquincollege.cst8277.utils.RestDemoConstants;
@@ -42,6 +43,9 @@ public class PlatformUser extends ModelBase implements Serializable {
     protected String username;
     protected String pwHash;
     protected Set<PlatformRole> platformRoles = new HashSet<>();
+    
+    protected Member member;
+    
 
     public String getUsername() {
         return username;
@@ -69,6 +73,15 @@ public class PlatformUser extends ModelBase implements Serializable {
     }
     public void setPlatformRoles(Set<PlatformRole> platformRoles) {
         this.platformRoles = platformRoles;
+    }
+    
+    
+    @OneToOne(mappedBy= "platformUser")
+    public Member getMember() {
+        return member;
+    }
+    public void setMember(Member member) {
+        this.member = member;
     }
 
 }

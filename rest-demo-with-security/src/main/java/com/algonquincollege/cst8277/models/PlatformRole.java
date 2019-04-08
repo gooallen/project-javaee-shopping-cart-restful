@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
@@ -22,6 +23,9 @@ public class PlatformRole extends ModelBase implements Serializable {
 
     protected String roleName;
     protected List<PlatformUser> platformUsers;
+    
+    protected Member member;
+    
 
     public String getRoleName() {
         return roleName;
@@ -36,6 +40,14 @@ public class PlatformRole extends ModelBase implements Serializable {
     }
     public void setPlatformUsers(List<PlatformUser> platformUsers) {
         this.platformUsers = platformUsers;
+    }
+    
+    @OneToOne(mappedBy = "platformRole")
+    public Member getMember() {
+        return member;
+    }
+    public void setMember(Member member) {
+        this.member = member;
     }
 
 

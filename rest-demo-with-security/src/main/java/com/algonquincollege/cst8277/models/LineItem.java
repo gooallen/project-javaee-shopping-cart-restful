@@ -13,32 +13,45 @@ import javax.persistence.Table;
  */
 @Entity
 @EntityListeners({AuditListener.class})
-@Table(name = "LineItem")
+@Table(name = "LINEITEM")
 public class LineItem extends ModelBase implements Serializable {
+    
+    /** explicit set serialVersionUID */
+    private static final long serialVersionUID = 1L;
     
     private double subtotal;
     private int quantity;
-    private String product;
+    private Product product;
+
     private Cart cart;
     
     public double getSubtotal() {
         return subtotal;
     }
-    public void setSubtotal(double subtotal) {
-        this.subtotal = subtotal;
+    
+    public void setSubtotal(double subTotal) {
+        this.subtotal = subTotal;
     }
+    
     public int getQuantity() {
         return quantity;
     }
+    
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-    public String getProduct() {
+    
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    public Product getProduct() {
         return product;
     }
-    public void setProduct(String product) {
+    
+    public void setProduct(Product product) {
         this.product = product;
     }
+
+    
     
     @ManyToOne
     @JoinColumn(name="cart_id")

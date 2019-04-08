@@ -13,6 +13,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 
 import com.algonquincollege.cst8277.models.Employee;
+import com.algonquincollege.cst8277.models.LineItem;
 
 @Stateless
 public class SimpleBean {
@@ -20,10 +21,10 @@ public class SimpleBean {
     @PersistenceContext(unitName = PU_NAME)
     protected EntityManager em;
 
-    public List<Employee> getEmployeeList() {
+    public List<LineItem> getLineItemList() {
         CriteriaBuilder cb = em.getCriteriaBuilder();
-        CriteriaQuery<Employee> cq = cb.createQuery(Employee.class);
-        cq.select(cq.from(Employee.class));
+        CriteriaQuery<LineItem> cq = cb.createQuery(LineItem.class);
+        cq.select(cq.from(LineItem.class));
         return em.createQuery(cq).getResultList();
     }
 

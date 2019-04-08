@@ -8,14 +8,16 @@
     <class>com.algonquincollege.cst8277.models.Audit</class>
     <class>com.algonquincollege.cst8277.models.Employee</class>
     <class>com.algonquincollege.cst8277.models.ModelBase</class>
-    <class>com.algonquincollege.cst8277.models.PlatformRole</class>
-    <class>com.algonquincollege.cst8277.models.PlatformUser</class> 
-    <class>com.algonquincollege.cst8277.models.LineItem</class>
     <class>com.algonquincollege.cst8277.models.Cart</class>
-    
+    <class>com.algonquincollege.cst8277.models.LineItem</class>
+    <class>com.algonquincollege.cst8277.models.Product</class>
+    <class>com.algonquincollege.cst8277.models.Member</class>
+    <class>com.algonquincollege.cst8277.models.PlatformRole</class>
+    <class>com.algonquincollege.cst8277.models.PlatformUser</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+      <!-- <property name="javax.persistence.schema-generation.database.action" value="validate"/>-->
       <property name="eclipselink.target-database" value="org.eclipse.persistence.platform.database.H2Platform" />
     </properties>
   </persistence-unit>
