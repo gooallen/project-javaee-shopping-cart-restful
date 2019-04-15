@@ -1,0 +1,5 @@
+com\algonquincollege\cst8277\models\PlatformUserRoleTestSuite.class
+com\algonquincollege\cst8277\models\TestSuiteConstants.class
+com\algonquincollege\cst8277\models\CartLineItemTestSuite.class
+com\algonquincollege\cst8277\models\ProductLineItemTestSuite.class
+com\algonquincollege\cst8277\models\MemberPlatformUserTestSuite.class

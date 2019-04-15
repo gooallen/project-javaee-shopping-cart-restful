@@ -1,0 +1,201 @@
+{
+	"info": {
+		"_postman_id": "55e9ce75-67f8-4df5-8451-0148a25f874f",
+		"name": "product",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/demo-security/api/v1/product/1",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "localhost:8080/demo-security/api/v1/product/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"demo-security",
+						"api",
+						"v1",
+						"product",
+						"1"
+					]
+				},
+				"description": "delete a product"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/demo-security/api/v1/product",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/demo-security/api/v1/product",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"demo-security",
+						"api",
+						"v1",
+						"product"
+					]
+				},
+				"description": "retrieve all products"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/demo-security/api/v1/product/rawProduct",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"audit\": {\n            \"createdDate\": \"1970-01-01T12:22:00\",\n            \"updatedDate\": \"1970-01-01T16:22:00\"\n        },\n        \"version\": 1,\n        \"lineItem\": [],\n        \"productCode\": \"000-003\",\n        \"productDescription\": \"Sci novel Book\",\n        \"productName\": \"Hello Alvin\",\n        \"productPrice\": 25.5\n    }"
+				},
+				"url": {
+					"raw": "localhost:8080/demo-security/api/v1/product/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"demo-security",
+						"api",
+						"v1",
+						"product",
+						"2"
+					]
+				},
+				"description": "add a raw product"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/demo-security/api/v1/product/2",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"audit\": {\n            \"createdDate\": \"1970-01-01T12:22:00\",\n            \"updatedDate\": \"1970-01-01T16:22:00\"\n        },\n        \"id\": 2,\n        \"version\": 1,\n        \"lineItem\": [],\n        \"productCode\": \"000-002\",\n        \"productDescription\": \"Sci novel Book\",\n        \"productName\": \"Black Hole to another side of Universe\",\n        \"productPrice\": 21.5\n    }"
+				},
+				"url": {
+					"raw": "localhost:8080/demo-security/api/v1/product/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"demo-security",
+						"api",
+						"v1",
+						"product",
+						"2"
+					]
+				},
+				"description": "change a product detail"
+			},
+			"response": []
+		}
+	]
+}

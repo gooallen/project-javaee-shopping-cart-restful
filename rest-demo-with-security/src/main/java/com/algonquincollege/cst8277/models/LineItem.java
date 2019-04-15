@@ -1,7 +1,14 @@
+/**
+ * File: LineItem.java
+ * Course: CST8277
+ * @author: Byeongyun Goo (#040888224), Zeyang Hu (#040885680), Sohaila Binte Ridwan (#040847430)
+ * @date: April 13th, 2019
+ */
 package com.algonquincollege.cst8277.models;
 
 import java.io.Serializable;
 
+import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.JoinColumn;
@@ -25,6 +32,11 @@ public class LineItem extends ModelBase implements Serializable {
 
     private Cart cart;
     
+    public LineItem() {
+        super();
+    }
+    
+    
     public double getSubtotal() {
         return subtotal;
     }
@@ -41,6 +53,7 @@ public class LineItem extends ModelBase implements Serializable {
         this.quantity = quantity;
     }
     
+    @JsonbTransient
     @ManyToOne
     @JoinColumn(name = "product_id")
     public Product getProduct() {
@@ -52,7 +65,7 @@ public class LineItem extends ModelBase implements Serializable {
     }
 
     
-    
+    @JsonbTransient
     @ManyToOne
     @JoinColumn(name="cart_id")
     public Cart getCart() {

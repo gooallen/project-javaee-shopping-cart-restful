@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.algonquincollege.cst8277.models.CartLineItemTestSuite
+-------------------------------------------------------------------------------
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.096 sec - in com.algonquincollege.cst8277.models.CartLineItemTestSuite

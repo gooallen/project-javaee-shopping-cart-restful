@@ -16,6 +16,8 @@ import javax.security.enterprise.identitystore.CredentialValidationResult;
 import javax.security.enterprise.identitystore.IdentityStore;
 import javax.security.enterprise.identitystore.Pbkdf2PasswordHash;
 
+import org.glassfish.soteria.WrappingCallerPrincipal;
+
 import com.algonquincollege.cst8277.models.PlatformRole;
 import com.algonquincollege.cst8277.models.PlatformUser;
 
@@ -28,9 +30,7 @@ public class CustomIdentityStore implements IdentityStore {
 
     @Inject
     protected Pbkdf2PasswordHash pbAndjPasswordHash;
-    
-    
-    // attempt to validate credential object
+
     @Override
     public CredentialValidationResult validate(Credential credential) {
 
@@ -61,8 +61,10 @@ public class CustomIdentityStore implements IdentityStore {
                 try {
                     boolean verified = pbAndjPasswordHash.verify(credentialPassword.toCharArray(), pwHash);
                     if (verified) {
-                        Set<String> roleNames = getRolesNamesFromPlatformRoles(user.getPlatformRoles());
-                        result = new CredentialValidationResult(callerName, roleNames);
+//                        Set<String> roleNames = getRolesNamesFromPlatformRoles(user.getPlatformRoles());
+//                        result = new CredentialValidationResult(callerName, roleNames);
+                           result = new CredentialValidationResult(new WrappingCallerPrincipal(user),
+                           getRolesNamesFromPlatformRoles(user.getPlatformRoles()));
                     }
                 }
                 catch (Exception e) {

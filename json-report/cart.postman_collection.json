@@ -1,0 +1,236 @@
+{
+	"info": {
+		"_postman_id": "9f60b050-04e6-49d2-aea1-7b9183919d15",
+		"name": "cart",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/demo-security/api/v1/cart",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/demo-security/api/v1/cart",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"demo-security",
+						"api",
+						"v1",
+						"cart"
+					]
+				},
+				"description": "get cart items"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/demo-security/api/v1/cart?member-id=1",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"audit\": {\n            \"createdDate\": \"2019-04-14T13:06:26.268\",\n            \"updatedDate\": \"2019-04-14T13:06:26.267\"\n        },\n        \"version\": 1,\n        \"lineItems\": [],\n        \"member\": {\n            \"audit\": {\n                \"createdDate\": \"1970-01-01T12:22:00\",\n                \"updatedDate\": \"1970-01-01T16:22:00\"\n            },\n            \"id\": 1,\n            \"version\": 1,\n            \"memberEmail\": \"zeyang@hu.com\",\n            \"memberFirstName\": \"Zeyang\",\n            \"memberLastName\": \"Hu\",\n            \"memberPhone\": \"613-501-0565\"\n        },\n        \"total\": 0\n    }"
+				},
+				"url": {
+					"raw": "localhost:8080/demo-security/api/v1/cart?member-id=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"demo-security",
+						"api",
+						"v1",
+						"cart"
+					],
+					"query": [
+						{
+							"key": "member-id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/demo-security/api/v1/cart/1",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"audit\": {\n            \"createdDate\": \"2019-04-14T13:06:26.268\",\n            \"updatedDate\": \"2019-04-14T13:06:26.267\"\n        },\n        \"id\": 1,\n        \"version\": 1,\n        \"lineItems\": [],\n        \"member\": {\n            \"audit\": {\n                \"createdDate\": \"1970-01-01T12:22:00\",\n                \"updatedDate\": \"1970-01-01T16:22:00\"\n            },\n            \"id\": 1,\n            \"version\": 1,\n            \"memberEmail\": \"zeyang@hu.com\",\n            \"memberFirstName\": \"Zeyang\",\n            \"memberLastName\": \"Hu\",\n            \"memberPhone\": \"613-501-0565\"\n        },\n        \"total\": 10000\n    }"
+				},
+				"url": {
+					"raw": "localhost:8080/demo-security/api/v1/cart/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"demo-security",
+						"api",
+						"v1",
+						"cart",
+						"1"
+					]
+				},
+				"description": "Update total amount"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/demo-security/api/v1/cart/1",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/demo-security/api/v1/cart/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"demo-security",
+						"api",
+						"v1",
+						"cart",
+						"1"
+					]
+				},
+				"description": "delete"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/demo-security/api/v1/cart/1",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "zeyang",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "zeyang",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/demo-security/api/v1/cart/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"demo-security",
+						"api",
+						"v1",
+						"cart",
+						"1"
+					]
+				},
+				"description": "Get cart by Id"
+			},
+			"response": []
+		}
+	]
+}

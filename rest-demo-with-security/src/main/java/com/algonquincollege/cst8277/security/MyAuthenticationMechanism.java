@@ -3,6 +3,7 @@ package com.algonquincollege.cst8277.security;
 import static javax.security.enterprise.identitystore.CredentialValidationResult.Status.VALID;
 import static javax.servlet.http.HttpServletRequest.BASIC_AUTH;
 
+import java.security.Principal;
 import java.util.Base64;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -17,6 +18,8 @@ import javax.security.enterprise.identitystore.IdentityStore;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.core.HttpHeaders;
+
+import org.glassfish.soteria.WrappingCallerPrincipal;
 
 @ApplicationScoped
 public class MyAuthenticationMechanism implements HttpAuthenticationMechanism {
@@ -51,7 +54,15 @@ public class MyAuthenticationMechanism implements HttpAuthenticationMechanism {
             if (name != null && password != null) {
                 CredentialValidationResult validationResult = identityStore.validate(new UsernamePasswordCredential(name, password));
                 if (validationResult.getStatus() == VALID) {
-                    result = httpMessageContext.notifyContainerAboutLogin(validationResult);
+                    Principal principal = validationResult.getCallerPrincipal();
+                    
+                    if (principal instanceof WrappingCallerPrincipal) {
+
+                        principal = ((WrappingCallerPrincipal)principal).getWrapped();
+
+                    }
+                    result = httpMessageContext.notifyContainerAboutLogin(principal,validationResult.getCallerGroups());
+                    //result = httpMessageContext.notifyContainerAboutLogin(validationResult);
                 }
                 else {
                     result = httpMessageContext.responseUnauthorized();

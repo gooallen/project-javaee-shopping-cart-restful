@@ -13,7 +13,6 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 
 import com.algonquincollege.cst8277.models.Employee;
-import com.algonquincollege.cst8277.models.LineItem;
 
 @Stateless
 public class SimpleBean {
@@ -21,10 +20,10 @@ public class SimpleBean {
     @PersistenceContext(unitName = PU_NAME)
     protected EntityManager em;
 
-    public List<LineItem> getLineItemList() {
+    public List<Employee> getEmployeeList() {
         CriteriaBuilder cb = em.getCriteriaBuilder();
-        CriteriaQuery<LineItem> cq = cb.createQuery(LineItem.class);
-        cq.select(cq.from(LineItem.class));
+        CriteriaQuery<Employee> cq = cb.createQuery(Employee.class);
+        cq.select(cq.from(Employee.class));
         return em.createQuery(cq).getResultList();
     }
 
@@ -36,9 +35,4 @@ public class SimpleBean {
     public Employee getEmployeeById(int id) {
         return em.find(Employee.class, id);
     }
-
-	public List<Employee> getEmployeeList() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

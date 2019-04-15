@@ -19,6 +19,8 @@ import static com.algonquincollege.cst8277.utils.RestDemoConstants.ADMIN_ROLENAM
 import static com.algonquincollege.cst8277.utils.RestDemoConstants.USER_ROLENAME;
 import static javax.ws.rs.core.Response.Status.NOT_FOUND;
 
+import java.security.Principal;
+
 import java.util.List;
 
 import javax.annotation.security.RolesAllowed;
@@ -98,6 +100,25 @@ public class EmployeeResource {
         }
         else {
         */
+        
+        Principal principal = sc.getCallerPrincipal();
+        
+        if (principal == null) {
+
+            //because of @RolesAllowed(USER_ROLENAME) this should never happen!
+
+            response = Response.serverError().entity("{\"message\":\"missing principal\"}").build();
+
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
             Employee emp = simpleBean.getEmployeeById(id);
             if (emp == null) {
                 response = Response.status(NOT_FOUND).build();

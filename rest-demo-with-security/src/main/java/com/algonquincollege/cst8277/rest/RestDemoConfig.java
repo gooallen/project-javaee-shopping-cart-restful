@@ -31,7 +31,7 @@ public class RestDemoConfig extends Application {
 
     //default behaviour of 'empty' Application is to scan for all Resource classes annotated with @Path
 
-    /*
+    /*6
      * if you wish to specify directly the Resource classes, you need to provide an override impl of getClasses
     @Override
     public Set<Class<?>> getClasses() {

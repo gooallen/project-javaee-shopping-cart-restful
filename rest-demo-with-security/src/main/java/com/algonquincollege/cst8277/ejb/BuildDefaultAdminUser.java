@@ -1,3 +1,9 @@
+/**
+ * File: BuildDefaultAdminuser.java
+ * Course: CST8277
+ * @author: Byeongyun Goo (#040888224), Zeyang Hu (#040885680), Sohaila Binte Ridwan (#040847430)
+ * @date: April 13th, 2019
+ */
 package com.algonquincollege.cst8277.ejb;
 
 import static com.algonquincollege.cst8277.utils.RestDemoConstants.ADMIN_ROLENAME;
@@ -35,21 +41,36 @@ import com.algonquincollege.cst8277.security.CustomIdentityStoreJPAHelper;
 @Singleton
 public class BuildDefaultAdminUser {
 
+    /**
+     * inject JPA Helper
+     */
     @Inject
     protected CustomIdentityStoreJPAHelper jpaHelper;
 
+    /**
+     * set a default user name
+     */
     @Inject
     @ConfigProperty(name = DEFAULT_ADMIN_USER_PROPNAME, defaultValue = DEFAULT_ADMIN_USER)
     private String defaultAdminUsername;
 
+    /**
+     * set a password 
+     */
     //TODO - encrypt value inside microprofile-config.properties
     @Inject
     @ConfigProperty(name = DEFAULT_ADMIN_USER_PASSWORD_PROPNAME)
     private String defaultAdminUserPassword;
 
+    /**
+     * hash encrypt for the password
+     */
     @Inject
     protected Pbkdf2PasswordHash pbAndjPasswordHash;
 
+    /**
+     * initailizing admin user with info 
+     */
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
     @PostConstruct
     public void init() {
