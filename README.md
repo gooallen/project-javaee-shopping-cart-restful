@@ -4,4 +4,4 @@
 - Session beans – for business logic
 - REST – representation of back-end resources
 - JEE Security Roles – control who can invoke which business operation
-- Testing
+- JUnit test-cases (CRUD/Queries), Postman Collection (RESTful messages) 
